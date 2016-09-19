@@ -1,0 +1,20 @@
+{%extends "NewsBundle::news.html.twig"%}
+{% block stylesheets %}hjgsdjkfh{% endblock %}
+{% block title %}
+    {{ parent() }}
+    - update
+{% endblock %}
+
+{% block body %}
+ 
+           <div class="container col-xs-10 col-xs-offset-1">
+               {{form_start(annonce,{'attr':{'action':path('update',{'id':id})}})}}
+               {{form_end(annonce)}}
+               <p id="retour"></p><button id="edit">mise a jour</button>
+   </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+        <script type="text/javascript" src="{{asset('bundles/script/main.js')}}"></script>
+{% endblock %}

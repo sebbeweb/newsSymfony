@@ -1,0 +1,15 @@
+{%extends "NewsBundle::news.html.twig"%}
+{% block stylesheets %}hjgsdjkfh{% endblock %}
+{% block title %}
+    {{ parent() }}
+    - Add
+{% endblock %}
+
+{% block body %}
+
+        {{form_start(form,{'attr':{'action':path('valid')}})}}
+        {{form_rest(form)}}
+        {{form_end(form)}}
+    
+{% endblock %}
+

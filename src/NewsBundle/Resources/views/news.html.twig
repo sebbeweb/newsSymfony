@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}News{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        
+    </head>
+    <body>
+        {% block body %}
+            <a href="{{path('ajout')}}">Ajouter news</a>
+             {%for news in niouze %}
+                <p>{{news.titre}}</p>
+                <p>{{news.date}}</p>
+                <p>{{news.sujet}}</p>
+                <p>{{news.auteur}}</p>
+                <a href="{{path('editAnnonce',{'id':news.id})}}">update</a>
+                <a href="{{path('edit',{'id':news.id})}}">Editer</a>
+                <a href="{{path('delete',{'id':news.id})}}">Supprimer</a>
+             {% endfor %}
+        {% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('bundles/script/jquery/jquery.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>
